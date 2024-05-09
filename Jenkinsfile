@@ -74,7 +74,7 @@ pipeline {
                 }
             }
         }
-
+/*
         stage('SonarQube Analysis') {
             when {
                 expression { (env.BRANCH_NAME == 'dev') || (env.BRANCH_NAME == 'test') || (env.BRANCH_NAME == 'master') }
@@ -92,7 +92,7 @@ pipeline {
                 }
             }
         }
-
+*/
         stage('Docker Login') {
             when {
                 expression { (env.BRANCH_NAME == 'dev') || (env.BRANCH_NAME == 'test') || (env.BRANCH_NAME == 'master') }
