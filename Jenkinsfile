@@ -4,6 +4,10 @@ def microservices = ['ecomm-cart']
 pipeline {
     agent any
 
+    tools{
+            maven 'maven'
+        }
+
     environment {
         DOCKERHUB_USERNAME = "imenmettichi"
         // Ensure Docker credentials are stored securely in Jenkins
@@ -39,7 +43,7 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Maven Build') {
             when {
                 expression { (env.BRANCH_NAME == 'dev') || (env.BRANCH_NAME == 'test') || (env.BRANCH_NAME == 'master') }
             }
